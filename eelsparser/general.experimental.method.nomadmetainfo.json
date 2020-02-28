@@ -1,0 +1,45 @@
+{
+  "type":"nomad_meta_info_1_0",
+  "description":"General definitions for experiment data, not specific to any experimental method or parser.",
+  "dependencies":[
+    { "relativePath":"general.experimental.nomadmetainfo.json" }
+  ],
+  "metaInfos":[
+    {
+      "description": "This section contains information about the applied experimental method.",
+      "kindStr":"type_section",
+      "name":"section_method",
+      "superNames":["section_experiment"]
+    },
+    {
+      "description": "Full name of the experimental method in use",
+      "name": "experiment_method_name",
+      "dtypeStr": "C",
+      "superNames":[ "section_method" ]
+    },
+    {
+      "description": "Abbreviated name (i.e. acronym) of the experimental method",
+      "name": "experiment_method_abbreviation",
+      "dtypeStr": "C",
+      "superNames":[ "section_method" ]
+    },
+    {
+      "description": "Name or model of the equipment (e.g. in full or an acronym).",
+      "name": "equipment_description",
+      "dtypeStr": "C",
+      "superNames":[ "section_method" ]
+    },
+    {
+      "description":"The probing method used",
+      "dtypeStr":"C",
+      "superNames":["section_method"],
+      "name":"probing_method",
+      "values": [
+        "laser pulses",
+        "electric pulsing",
+        "x-rays",
+        "electrons"
+      ]
+    }
+  ]
+}

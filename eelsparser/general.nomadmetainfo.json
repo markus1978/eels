@@ -1,0 +1,155 @@
+{
+  "type":"nomad_meta_info_1_0",
+  "description":"General definitions, not specific to any domain, field, or parser",
+  "dependencies":[],
+  "metaInfos":[
+    {
+      "description":"General information about this entry that is independent from its domain, field, or used parser",
+      "kindStr":"type_section",
+      "name":"section_entry_info",
+      "superNames":[]
+    },
+    {
+      "description":"Upload datetime, given as total number of seconds is the elapsed since the unix epoch (1 January 1970)",
+      "dtypeStr":"i64",
+      "name":"entry_upload_time",
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Name of the uploader, given as lastname, firstname.",
+      "dtypeStr":"C",
+      "name":"entry_uploader_name",
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"The id of the uploader.",
+      "dtypeStr":"C",
+      "name":"entry_uploader_id",
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Nomad upload id",
+      "dtypeStr":"C",
+      "name":"upload_id",
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Nomad calc id.",
+      "dtypeStr":"C",
+      "name":"calc_id",
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Calculation hash based on raw file contents.",
+      "dtypeStr":"C",
+      "name":"calc_hash",
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Path to the main file within the upload.",
+      "dtypeStr":"C",
+      "name":"mainfile",
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Name of the parser used to extract this information.",
+      "dtypeStr":"C",
+      "name":"parser_name",
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Filepaths of files that belong to this entry, i.e. files in the same directory. Filepaths are relative to the upload.",
+      "dtypeStr":"C",
+      "name":"filepaths",
+      "shape":[
+        "number_of_files"
+      ],
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Number of files that belong to this entry.",
+      "dtypeStr":"i",
+      "kindStr":"type_dimension",
+      "name":"number_of_files",
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Information about the used archive processing steps and their execution.",
+      "kindStr":"type_section",
+      "name":"section_archive_processing_info",
+      "repeats":true,
+      "superNames":[
+        "section_entry_info"
+      ]
+    },
+    {
+      "description":"Name of the applied archive processing program.",
+      "dtypeStr":"C",
+      "name":"archive_processor_name",
+      "superNames":[
+        "section_archive_processing_info"
+      ]
+    },
+    {
+      "description":"The main error during execution of the archive processing program that failed the program.",
+      "dtypeStr":"C",
+      "name":"archive_processor_error",
+      "superNames":[
+        "section_archive_processing_info"
+      ]
+    },
+    {
+      "description":"Number of warnings during execution of the archive processing program.",
+      "dtypeStr":"i",
+      "kindStr":"type_dimension",
+      "name":"number_of_archive_processor_warnings",
+      "superNames":[
+        "section_archive_processing_info"
+      ]
+    },
+    {
+      "description":"Warnings during execution of the archive processing program.",
+      "dtypeStr":"C",
+      "name":"archive_processor_warnings",
+      "shape":[
+        "number_of_archive_processor_warnings"
+      ],
+      "superNames":[
+        "section_archive_processing_info"
+      ]
+    },
+    {
+      "description":"Status returned by archive processing program.",
+      "dtypeStr":"C",
+      "name":"archive_processor_status",
+      "superNames":[
+        "section_archive_processing_info"
+      ],
+      "values":{
+        "Failure":"The program failed.",
+        "Success":"The program was successful.",
+        "WithWarnings":"The program had serious warnings."
+      }
+    }
+  ]
+}

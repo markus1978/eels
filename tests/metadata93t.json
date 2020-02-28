@@ -1,0 +1,36 @@
+{
+    "acquisition_mode": "Diffraction",
+    "api_permalink": "https://api.eelsdb.eu/spectra/copper/",
+    "associated_spectra": "[{'name': 'Copper', 'link': 'https://eelsdb.eu/spectra/copper-2/', 'type': 'Core Loss'}]",
+    "author": {
+        "name": "KIHN Yolande",
+        "profile_api_url": "https://api.eelsdb.eu/author/kihn/",
+        "profile_url": "https://eelsdb.eu/author/kihn/"
+    },
+    "beamenergy": "100 kV",
+    "collection": "3 mrad",
+    "comment_count": "0",
+    "convergence": "3 mrad",
+    "darkcurrent": "Yes",
+    "description": " Analyst: Y.Kihn. Temperature: Room.",
+    "detector": "Parallel: 666 Gatan",
+    "download_link": "https://eelsdb.eu/wp-content/uploads/2015/09/DspeciDRgmA.msa",
+    "elements": "['Cu']",
+    "formula": "Cu",
+    "gainvariation": "Yes",
+    "guntype": "LaB6",
+    "id": "21634",
+    "keywords": "['imported from old site']",
+    "max_energy": "81.5 eV",
+    "microscope": "CM20",
+    "min_energy": "-20.6 eV",
+    "other_links": "[{'url': 'http://pc-web.cemes.fr/eelsdb/index.php?page=displayspec.php&id=123', 'title': 'Old EELS DB'}]",
+    "permalink": "https://eelsdb.eu/spectra/copper/",
+    "published": "2007-11-28 00:00:00",
+    "reference": {
+        "freetext": "Correlation between microstructure and mechanical spectroscopy of a Cu-Cu2O al ... HA, M. GERLAND, Y. KIHN, A. RIVIERE,Eur. Phys. J. Appl. Phys., 29, 83-89, 2005"
+    },
+    "stepSize": "0.1 eV/pixel",
+    "title": "Copper",
+    "type": "Low Loss"
+}

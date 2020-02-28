@@ -1,0 +1,108 @@
+{
+  "type":"nomad_meta_info_1_0",
+  "description":"General definitions for experiment data, not specific to any experimental method or parser.",
+  "dependencies":[
+    { "relativePath":"general.experimental.nomadmetainfo.json" }
+  ],
+  "metaInfos":[
+    {
+      "description":"The section for all sample related (meta)data that was used in the experiment.",
+      "kindStr":"type_section",
+      "name":"section_sample",
+      "superNames":[
+        "section_experiment"
+      ]
+    },
+    {
+      "description": "Description of the sample used in the experiment.",
+      "name": "sample_description",
+      "dtypeStr": "C",
+      "shape": [],
+      "superNames": ["section_sample"],
+      "units": ""
+    },
+    {
+      "description": "Identification number or signatures of the sample used.",
+      "name": "sample_id",
+      "dtypeStr": "C",
+      "shape": [],
+      "superNames": ["section_method"],
+      "units": ""
+    },
+    {
+      "description":"The physical state of the sample.",
+      "dtypeStr":"C",
+      "name":"sample_state",
+      "superNames":["section_sample"],
+      "values":{
+        "gas":"Gas",
+        "liquid":"Liquid",
+        "solution":"Solution"
+      }
+    },
+    {
+      "description":"The chemical formula that describes the sample",
+      "dtypeStr":"C",
+      "superNames":["section_sample"],
+      "name":"sample_chemical_formula"
+    },
+    {
+      "description":"The chemical name that describes the sample",
+      "dtypeStr":"C",
+      "superNames":["section_sample"],
+      "name":"sample_chemical_name"
+    },
+    {
+      "description":"The chemical name that describes the sample",
+      "dtypeStr":"C",
+      "superNames":["section_sample"],
+      "name":"sample_atom_labels",
+      "shape": ["n"]
+    },
+    {
+      "description": "Number of distinct chemical elements in the sample.",
+      "name": "number_of_elements",
+      "dtypeStr": "i",
+      "kindStr": "type_dimension",
+      "shape": [],
+      "superNames": ["section_sample"]
+    },
+    {
+      "description": "Space group of the sample compound (if crystalline).",
+      "name": "sample_space_group",
+      "dtypeStr": "i",
+      "shape": [],
+      "superNames": ["section_sample"],
+      "units": ""
+    },
+    {
+      "description":"The temperature of the sample during the experiment in K.",
+      "dtypeStr":"f",
+      "superNames":["section_sample"],
+      "name":"sample_temperature",
+      "units": "K"
+    },
+    {
+      "description":"The sample microstructure",
+      "dtypeStr":"C",
+      "superNames":["section_sample"],
+      "name":"sample_microstructure",
+      "values": [
+        "thin films",
+        "nanoscale objects",
+        "bulk sample, single-crystalline",
+        "bulk sample, polycrystalline"
+      ]
+    },
+    {
+      "description":"The constituents",
+      "dtypeStr":"C",
+      "superNames":["section_sample"],
+      "name":"sample_constituents",
+      "values": [
+        "multi phase",
+        "single phase"
+      ]
+    }
+  ]
+}

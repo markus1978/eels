@@ -1,0 +1,35 @@
+{
+  "type":"nomad_meta_info_1_0",
+  "description":"General definitions for experiment data, not specific to any experimental method or parser.",
+  "dependencies":[
+    { "relativePath":"general.experimental.nomadmetainfo.json" }
+  ],
+  "metaInfos":[
+    {
+      "description":"This section contains information about the stored data.",
+      "kindStr":"type_section",
+      "name":"section_data",
+      "superNames":[
+        "section_experiment"
+      ]
+    },
+    {
+      "description":"The name of the repository, where the data is stored.",
+      "dtypeStr":"C",
+      "name":"data_repository_name",
+      "superNames":["section_data"]
+    },
+    {
+      "description":"An URL to the repository, where the data is stored.",
+      "dtypeStr":"C",
+      "name":"data_repository_url",
+      "superNames":["section_data"]
+    },
+    {
+      "description":"An URL to an image file that contains a preview.",
+      "dtypeStr":"C",
+      "name":"data_preview_url",
+      "superNames":["section_data"]
+    }
+  ]
+}

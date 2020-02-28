@@ -1,0 +1,80 @@
+{
+  "section_experiment": {
+    "_name": "section_experiment",
+    "_gIndex": 0,
+    "experiment_summary": "EELS-Spectra",
+    "experiment_location": "Earth",
+    "experiment_time": 1204585200,
+    "spectrum_type": "Core Loss",
+    "title": "LSMO perovskite",
+    "section_user": {
+      "_name": "section_user",
+      "_gIndex": 0,
+      "username": "Dominique Imhoff",
+      "profile_api_url": "https://api.eelsdb.eu/author/imhoff/",
+      "profile_url": "https://eelsdb.eu/author/imhoff/"
+    },
+    "section_method": {
+      "_name": "section_method",
+      "_gIndex": 0,
+      "experiment_method_name": "Electron Energy Loss Spectroscopy",
+      "probing_method": "electrons"
+    },
+    "section_sample": {
+      "_name": "section_sample",
+      "_gIndex": 0,
+      "sample_chemical_formula": "(La0.7,Sr0.3)MnO3",
+      "probe_size_in_nm^2": 0.7,
+      "source_purity": "perovskite multilayers UMP CNRS-Thales Palaiseau France (laser ablation)",
+      "sample_atom_labels": [
+        "La", 
+        "Sr", 
+        "Mn", 
+        "O"
+      ]
+    },
+    "section_em": {
+      "_name": "section_em",
+      "_gIndex": 0,
+      "name_em": "STEM-VG",
+      "gun_type": "Cold FEG",
+      "acquisition_mode": "STEM",
+      "convergence_semi-angle_in_mrad": 7.0,
+      "collection_semi-angle_in_mrad": 22.0,
+      "detector": "Parallel: 666 + CCD modified Orsay",
+      "integration_time_in_sec": 0.2,
+      "readouts": 10,
+      "dark_current_correction": true,
+      "gain_variation_spectrum": false,
+      "section_source1": {
+        "_name": "section_source1",
+        "_gIndex": 0,
+        "incident_energy_in_kV": 100.0,
+        "dispersion_in_eV/pixel": 0.229,
+        "monochromated": false
+      }
+    },
+    "section_data": {
+      "_name": "section_data",
+      "_gIndex": 0,
+      "id": 21737,
+      "edges": "['Mn_L2,3']",
+      "min_energy": 633.29,
+      "max_energy": 662.4,
+      "description": "background removed, calibration : 1- XAS energy reference from standard similar LSMO (maximum of MnL3 peak),               2- energy dispersion calibration of the detector from two peaks reference in low and core loss areas (STO substrate area in the multimayer system)., see also LaM,OK Analyst: imhoff. Temperature: Room., ['imported from old site']",
+      "data_repository_name": "EELS-DB",
+      "data_repository_url": "https://eelsdb.eu/wp-content/uploads/2015/09/DspecrAr6wi.msa",
+      "data_preview_url": "https://eelsdb.eu/wp-content/uploads/2015/09/DspecrAr6wi.msa",
+      "published": "2008-03-04 00:00:00",
+      "permalink": "https://eelsdb.eu/spectra/lsmo-perovskite/",
+      "api_permalink": "https://api.eelsdb.eu/spectra/lsmo-perovskite/",
+      "other_links": "[{'url': 'http://pc-web.cemes.fr/eelsdb/index.php?page=displayspec.php&id=228', 'title': 'Old EELS DB'}]",
+      "comment_count": 0,
+      "section_reference": {
+        "_name": "section_reference",
+        "_gIndex": 0,
+        "freetext": "EELS study of interfaces in magnetoresistive LSMO/STO/LSMO tunnel junctions, S ... bi T., Fert A., Colliex C.,, European-Physical-Journal-B., 34(2), 179-92, 2003"
+      }
+    }
+  }
+}

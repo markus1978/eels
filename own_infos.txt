@@ -1,0 +1,19 @@
+if you followed the instructions, run the parser by:
+
+source .pyenv/bin/activate
+cd nomad/dependencies/parsers/eels
+python -m eelsparser tests/metadata1t.json
+
+
+
+edit: ive changed the addValue function in /home/fabipi/nomad/dependencies/python_common/common/python/nomadcore/local_backend.py
+
+also could use isinstance but need NoneType = type(None)
+
+-> was changed by Markus Scheidgen
+
+
+
+EEls.py: downloads metadata from EEls Website and stores in txt files
+
+hyper2json.py: takes txt files and convert in json files for the parser

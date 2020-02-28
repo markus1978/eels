@@ -1,0 +1,88 @@
+{
+  "type":"nomad_meta_info_1_0",
+  "description":"General definitions for experiment data, not specific to any experimental method or parser.",
+  "dependencies":[
+    { "relativePath":"general.nomadmetainfo.json" },
+    { "relativePath":"general.experimental.method.nomadmetainfo.json" },
+    { "relativePath":"general.experimental.sample.nomadmetainfo.json" },
+    { "relativePath":"general.experimental.data.nomadmetainfo.json" }
+  ],
+  "metaInfos":[
+    {
+      "description":"The root section for all (meta)data that belongs to a single experiment.",
+      "kindStr":"type_section",
+      "name":"section_experiment",
+      "superNames":[]
+    },
+    {
+      "description": "A descriptive summary of the content of the experiment.",
+      "name": "experiment_summary",
+      "dtypeStr": "C",
+      "superNames": ["section_experiment"]
+    },
+    {
+      "description":"Name of the city and country the experiment took place, format 'Country, City'",
+      "dtypeStr":"C",
+      "name":"experiment_location",
+      "superNames":[
+        "section_experiment"
+      ]
+    },
+    {
+      "description": "Name of the institution hosting the experimental facility (e.g. in full or an acronym).",
+      "name": "experiment_facility_institution",
+      "dtypeStr": "C",
+      "superNames": ["section_experiment"]
+    },
+    {
+      "description": "Name of the experimental facility (e.g. in full or an acronym).",
+      "name": "experiment_facility_name",
+      "dtypeStr": "C",
+      "superNames": ["section_experiment"]
+    },
+    {
+      "description":"The datetime of the beginning of the experiment in seconds since epoch.",
+      "dtypeStr":"i64",
+      "name":"experiment_time",
+      "superNames":[
+        "section_experiment"
+      ],
+      "units":"s"
+    },
+    {
+      "description":"The datetime of the experiment end in seconds since epoch.",
+      "dtypeStr":"i64",
+      "name":"experiment_end_time",
+      "superNames":[
+        "section_experiment"
+      ],
+      "units":"s"
+    },
+    {
+      "description":"This section contains information about the stored data.",
+      "kindStr":"type_section",
+      "name":"section_data",
+      "superNames":[
+        "section_experiment"
+      ]
+    },
+    {
+      "description":"The name of the repository, where the data is stored.",
+      "dtypeStr":"C",
+      "name":"data_repository_name",
+      "superNames":["section_data"]
+    },
+    {
+      "description":"An URL to the repository, where the data is stored.",
+      "dtypeStr":"C",
+      "name":"data_repository_url",
+      "superNames":["section_data"]
+    },
+    {
+      "description":"An URL to an image file that contains a preview.",
+      "dtypeStr":"C",
+      "name":"data_preview_url",
+      "superNames":["section_data"]
+    }
+  ]
+}

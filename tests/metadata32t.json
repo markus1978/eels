@@ -1,0 +1,32 @@
+{
+    "api_permalink": "https://api.eelsdb.eu/spectra/boron-oxide-2/",
+    "author": {
+        "name": "(Dr) Karine Masenelli-Varlot",
+        "profile_api_url": "https://api.eelsdb.eu/author/karine-masenelli-varlot/",
+        "profile_url": "https://eelsdb.eu/author/karine-masenelli-varlot/"
+    },
+    "beamenergy": "800 kV",
+    "comment_count": "0",
+    "darkcurrent": "No",
+    "description": "specimen used for calibration linear background removed Grasshopper is a grating monochromator with 1800 lines (Wisconsin, USA) Analyst: Karine Varlot. Temperature: 298.",
+    "detector": "1800 l/mm",
+    "download_link": "https://eelsdb.eu/wp-content/uploads/2015/09/Dspec.800202.1.msa",
+    "edges": "['B_K']",
+    "elements": "['B', 'O']",
+    "formula": "B2O3",
+    "gainvariation": "No",
+    "guntype": "Grasshopper",
+    "id": "21533",
+    "keywords": "['imported from old site']",
+    "max_energy": "244.09 eV",
+    "microscope": "SRC (Synchrotron Radiation Center)",
+    "min_energy": "181.74 eV",
+    "monochromated": "Yes",
+    "other_links": "[{'url': 'http://pc-web.cemes.fr/eelsdb/index.php?page=displayspec.php&id=9', 'title': 'Old EELS DB'}]",
+    "permalink": "https://eelsdb.eu/spectra/boron-oxide-2/",
+    "published": "2005-04-20 00:00:00",
+    "resolution": "0.1 eV",
+    "stepSize": "0.12 eV/pixel",
+    "title": "Boron oxide",
+    "type": "X Ray Abs"
+}

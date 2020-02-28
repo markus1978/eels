@@ -1,0 +1,41 @@
+{
+    "acquisition_mode": "Diffraction",
+    "api_permalink": "https://api.eelsdb.eu/spectra/titanium-dioxide-2/",
+    "associated_spectra": "[{'name': 'Titanium Dioxide', 'link': 'https://eelsdb.eu/spectra/titanium-dioxide-3/', 'type': 'Core Loss'}, {'name': 'Titanium Dioxide', 'link': 'https://eelsdb.eu/spectra/titanium-dioxide-4/', 'type': 'Core Loss'}]",
+    "author": {
+        "name": "Giovanni Bertoni",
+        "profile_api_url": "https://api.eelsdb.eu/author/giovanni-bertoni/",
+        "profile_url": "https://eelsdb.eu/author/giovanni-bertoni/"
+    },
+    "beamenergy": "300 kV",
+    "collection": "0.81 mrad",
+    "comment_count": "0",
+    "convergence": "1.82 mrad",
+    "darkcurrent": "Yes",
+    "description": "polycrystalline sample Analyst: Giovanni Bertoni. Temperature: Room.",
+    "detector": "Parallel: GIF200",
+    "download_link": "https://eelsdb.eu/wp-content/uploads/2015/09/DspecbsF3Mw.msa",
+    "elements": "['Ti', 'O']",
+    "formula": "TiO2 (anatase)",
+    "gainvariation": "Yes",
+    "guntype": "feg Schottky",
+    "id": "21615",
+    "integratetime": "0.1 secs",
+    "keywords": "['imported from old site']",
+    "max_energy": "36.15 eV",
+    "microscope": "CM30",
+    "min_energy": "-15 eV",
+    "other_links": "[{'url': 'http://pc-web.cemes.fr/eelsdb/index.php?page=displayspec.php&id=101', 'title': 'Old EELS DB'}]",
+    "permalink": "https://eelsdb.eu/spectra/titanium-dioxide-2/",
+    "published": "2007-11-12 00:00:00",
+    "readouts": "10",
+    "reference": {
+        "freetext": "G. Bertoni, E. Beyers, J. Verbeeck, M. Mertens, P. Cool, E. F. Vansant, G. Van Tendeloo, Ultramicroscopy, 106, 630-635, 2006."
+    },
+    "resolution": "0.7 eV",
+    "source_purity": "Aldridh powder",
+    "stepSize": "0.05 eV/pixel",
+    "thickness": "0.257 t/&lambda;",
+    "title": "Titanium Dioxide",
+    "type": "Low Loss"
+}
