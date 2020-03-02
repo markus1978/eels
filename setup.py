@@ -23,7 +23,7 @@ def main():
         license='APACHE 2.0',
         packages=find_packages(),
         package_data={
-            'skeletonparser': ['*.json']
+            'eels': ['*.json']
         },
         install_requires=[
             'nomadcore'
