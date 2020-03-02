@@ -1,3 +1,5 @@
+abc.txt
+
 # use glob syntax.
 syntax: glob
 *~
