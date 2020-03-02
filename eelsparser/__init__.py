@@ -35,7 +35,7 @@ class EelsParserInterface(ParserInterface):
         to nomadmetainfo.json files that are part of the general nomad-meta-info
         submodule (i.e. ``dependencies/nomad-meta-info``).
          """
-        return os.path.join(os.path.dirname(__file__), 'skeleton.nomadmetainfo.json')
+        return os.path.join(os.path.dirname(__file__), 'eels.nomadmetainfo.json')
 
     def get_parser_info(self):
         """ Basic info about parser used in archive data and logs. """
@@ -63,7 +63,7 @@ class EelsParser(AbstractBaseParser):
         a_gid = backend.openSection('section_experiment')
         backend.addValue('experiment_summary', 'EELS-Spectra')
         backend.addValue('experiment_location', 'Earth')
-        
+
         try:
             dt_string = data.get('published')
             dt_object = datetime.strptime(dt_string, "%Y-%m-%d %H:%M:%S")
@@ -198,6 +198,7 @@ class EelsParser(AbstractBaseParser):
         backend.addValue('data_repository_name', 'EELS-DB')
         backend.addValue('data_repository_url', data.get('download_link'))
         backend.addValue('data_preview_url', data.get('download_link'))
+        backend.addValue('entry_repository_url', data.get('permalink'))
         backend.addValue('published', data.get('published'))
         backend.addValue('permalink', data.get('permalink'))
         backend.addValue('api_permalink', data.get('api_permalink'))

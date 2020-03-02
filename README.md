@@ -4,6 +4,24 @@ The eels.py file is from Hyperspy: https://github.com/hyperspy/hyperspy/blob/REL
 
 The parser is based on the following skeleton parser: https://gitlab.mpcdf.mpg.de/nomad-lab/parser-skeleton :
 
+# additional info
+
+if you followed the instructions below, run the parser by:
+
+```
+source .pyenv/bin/activate
+cd nomad/dependencies/parsers/eels
+python -m eelsparser tests/metadata1t.json
+```
+
+## download more EELS metadata
+
+EEls.py: downloads metadata from EEls Website and stores in txt files
+
+
+hyper2json.py: takes txt files and convert in json files for the parser
+
+
 # parser-skeleton
 
 ## About
