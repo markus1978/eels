@@ -2,10 +2,10 @@
   "type":"nomad_meta_info_1_0",
   "description":"General definitions for experiment data, not specific to any experimental method or parser.",
   "dependencies":[
-    { "relativePath":"general.nomadmetainfo.json" },
-    { "relativePath":"general.experimental.method.nomadmetainfo.json" },
-    { "relativePath":"general.experimental.sample.nomadmetainfo.json" },
-    { "relativePath":"general.experimental.data.nomadmetainfo.json" }
+    { "metainfoPath":"general.nomadmetainfo.json" },
+    { "metainfoPath":"general.experimental.method.nomadmetainfo.json" },
+    { "metainfoPath":"general.experimental.sample.nomadmetainfo.json" },
+    { "metainfoPath":"general.experimental.data.nomadmetainfo.json" }
   ],
   "metaInfos":[
     {
