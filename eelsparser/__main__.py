@@ -12,6 +12,9 @@
 #   limitations under the License.
 
 import sys
+import hyper2json as hj
+import os
+#print(os.getcwd())
 
 from nomad.parsing import LocalBackend
 from eelsparser import EelsParserInterface
@@ -20,11 +23,14 @@ if __name__ == "__main__":
     # instantiate the parser via its interface with a LocalBackend
     parser = EelsParserInterface(backend=LocalBackend)
     # call the actual parsing with the given mainfile
-    parser.parse(sys.argv[1])
+    
+    hj.transform(sys.argv[1])
+    #parser.parse(sys.argv[1])
+    parser.parse('temp.json')
+
     # print the results stored in the LocalBackend
     #parser.parser_context.super_backend.write_json(
     #    sys.stdout, pretty=True, root_sections=['section_experiment'])
 
-    f= open("abc.txt","w+")
-    parser.parser_context.super_backend.write_json(f, pretty=True, root_sections=['section_experiment'])
-    f.close()
+    with open("abc.txt","w+") as f:
+        parser.parser_context.super_backend.write_json(f, pretty=True, root_sections=['section_experiment'])
