@@ -11,7 +11,7 @@ if you followed the instructions below, run the parser by:
 ```
 source .pyenv/bin/activate
 cd nomad/dependencies/parsers/eels
-python -m eelsparser tests/metadata1t.json
+python -m eelsparser tests/metadata1.txt
 ```
 
 ## download more EELS metadata
