@@ -23,10 +23,9 @@ if __name__ == "__main__":
     # instantiate the parser via its interface with a LocalBackend
     parser = EelsParserInterface(backend=LocalBackend)
     # call the actual parsing with the given mainfile
-    
-    hj.transform(sys.argv[1])
+
     #parser.parse(sys.argv[1])
-    parser.parse('temp.json')
+    parser.parse(sys.argv[1])
 
     # print the results stored in the LocalBackend
     #parser.parser_context.super_backend.write_json(

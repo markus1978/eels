@@ -19,11 +19,17 @@ import numpy as np
 from datetime import datetime
 import time
 import ast
+import logging
 
 from nomadcore.simple_parser import SimpleMatcher
 from nomadcore.baseclasses import ParserInterface, AbstractBaseParser
 
 from nomad.parsing import LocalBackend
+
+from .hyper2json import transform as read_hyper
+
+
+logger = logging.getLogger(__name__)
 
 
 class EelsParserInterface(ParserInterface):
@@ -57,8 +63,11 @@ class EelsParser(AbstractBaseParser):
     def parse(self, filepath):
         backend = self.parser_context.super_backend
 
-        with open(filepath, 'rt') as f:
-            data = json.load(f)
+        try:
+            data = read_hyper(filepath)
+        except Exception as e:
+            logger.error('could not read mainfile', exc_info=e)
+            raise e
 
         a_gid = backend.openSection('section_experiment')
         backend.addValue('experiment_summary', 'EELS-Spectra')
@@ -68,12 +77,12 @@ class EelsParser(AbstractBaseParser):
             dt_string = data.get('published')
             dt_object = datetime.strptime(dt_string, "%Y-%m-%d %H:%M:%S")
             backend.addValue('experiment_time', int(time.mktime(dt_object.timetuple())))
-        except ValueError:
-            print('Wrong time format in start time!')
+        except ValueError as e:
+            logger.warn('Wrong time format in start time!', exc_info=e)
             dt_string = data.get('published')
             backend.addValue('start_time', dt_string)
-        except:
-            print('Some error occured transforming the time.')
+        except Exception as e:
+            logger.warn('Some error occured transforming the time.', exc_info=e)
             dt_string = data.get('published')
             backend.addValue('start_time', dt_string)
 
