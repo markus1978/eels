@@ -154,7 +154,6 @@ class EelsParser(AbstractBaseParser):
             split = temp.find(' ')
             temp1 = temp[:split]
             backend.addValue('relative_thickness_in_t/lambda', float(temp1))
-        backend.closeSection('section_em', ab_gid)
 
         ae_gid = backend.openSection('section_source1')
         temp = data.get('beamenergy')
@@ -179,6 +178,7 @@ class EelsParser(AbstractBaseParser):
                 temp1 = True
         backend.addValue('monochromated', temp1)
         backend.closeSection('section_source1', ae_gid)
+        backend.closeSection('section_em', ab_gid)
 
         ac_gid = backend.openSection('section_data')
         backend.addValue('id', int(data.get('id')))
