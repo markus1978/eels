@@ -9,12 +9,6 @@
   ],
   "metaInfos":[
     {
-      "description":"general overall section",
-      "kindStr":"type_section",
-      "name":"section_experiment",
-      "superNames":[]
-    },
-    {
       "description":"",
       "dtypeStr":"C",
       "name":"definition",
@@ -57,26 +51,11 @@
       "superNames":["section_experiment"]
     },
     {
-      "description":"Information about the used sample.",
-      "kindStr":"type_section",
-      "name":"section_sample",
-      "superNames":[
-        "section_experiment"
-      ]
-    },
-    {
       "description":"",
       "dtypeStr":"f",
-      "name":"probe_size_in_nm^2",
-      "superNames":["section_sample"],
-      "units":"nm²"
-    },
-    {
-      "description":"",
-      "dtypeStr":"C",
       "name":"probe_size",
       "superNames":["section_sample"],
-      "units":"nm²"
+      "units":"nm^2"
     },
     {
       "description":"description of the probe and probe preparation",
@@ -259,37 +238,36 @@
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"convergence_semi-angle_in_mrad",
+      "name":"convergence_semi_angle",
       "superNames":["section_em"],
       "units":"mrad"
     },
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"convergence_angle_in_mrad",
+      "name":"convergence_angle",
+      "superNames":["section_em"],
+      "units":"mrad"
+    },
+    {
+      "description":"in t/lambda",
+      "dtypeStr":"f",
+      "name":"relative_thickness",
+      "superNames":["section_em"]
+    },
+    {
+      "description":"",
+      "dtypeStr":"f",
+      "name":"collection_semi_angle",
       "superNames":["section_em"],
       "units":"mrad"
     },
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"relative_thickness_in_t/lambda",
+      "name":"integration_time",
       "superNames":["section_em"],
-      "units":"t/lambda"
-    },
-    {
-      "description":"",
-      "dtypeStr":"f",
-      "name":"collection_semi-angle_in_mrad",
-      "superNames":["section_em"],
-      "units":"mrad"
-    },
-    {
-      "description":"",
-      "dtypeStr":"f",
-      "name":"integration_time_in_sec",
-      "superNames":["section_em"],
-      "units":"sec"
+      "units":"s"
     },
     {
       "description":"",
@@ -312,44 +290,40 @@
     {
       "description":"",
       "dtypeStr":"i",
-      "name":"camera_length_in_str",
-      "superNames":["section_em"],
-      "units": "str"
+      "name":"camera_length",
+      "superNames":["section_em"]
     },
     {
       "description":"",
       "dtypeStr":"i",
-      "name":"camera_pixel_size_axis1_in_str",
-      "superNames":["section_em"],
-      "units": "str"
+      "name":"camera_pixel_size_axis1",
+      "superNames":["section_em"]
     },
     {
       "description":"",
       "dtypeStr":"i",
-      "name":"camera_pixel_size_axis2_in_str",
-      "superNames":["section_em"],
-      "units": "str"
+      "name":"camera_pixel_size_axis2",
+      "superNames":["section_em"]
     },
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"pixel_size_axis1_in_mrad",
+      "name":"pixel_size_axis1",
       "superNames":["section_em"],
       "units": "mrad"
     },
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"pixel_size_axis2_in_mrad",
+      "name":"pixel_size_axis2",
       "superNames":["section_em"],
       "units": "mrad"
     },
     {
-      "description":"",
       "dtypeStr":"f",
-      "name":"conversion_factor_in_counts/electron",
-      "superNames":["section_em"],
-      "units": "counts/electron"
+      "description":"in counts per electron",
+      "name":"conversion_factor",
+      "superNames":["section_em"]
     },
     {
       "description":"Information about the first aperture.",
@@ -632,7 +606,7 @@
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"exposure_time_in_ms",
+      "name":"exposure_time",
       "superNames":["section_camera"],
       "units": "ms"
     },
@@ -653,14 +627,14 @@
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"scan_area_axis1_in_nm",
+      "name":"scan_area_axis1",
       "superNames":["section_scan_properties"],
       "units": "nm"
     },
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"scan_area_axis2_in_nm",
+      "name":"scan_area_axis2",
       "superNames":["section_scan_properties"],
       "units": "nm"
     },
@@ -674,14 +648,14 @@
     {
       "description":"",
       "dtypeStr":"C",
-      "name":"series_param2_in_nm",
+      "name":"series_param2",
       "superNames":["section_camera"],
       "units": "nm"
     },
     {
       "description":"",
       "dtypeStr":"C",
-      "name":"series_param3_in_nm",
+      "name":"series_param3",
       "superNames":["section_camera"],
       "units": "nm"
     },
@@ -702,28 +676,28 @@
     {
       "description":"Incident Beam Energy, high tension",
       "dtypeStr":"f",
-      "name":"incident_energy_in_kV",
+      "name":"incident_energy",
       "superNames":["section_source1"],
       "units": "kV"
     },
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"resolution_in_eV",
+      "name":"resolution",
+      "superNames":["section_source1"],
+      "units": "eV"
+    },
+    {
+      "description":"In eV per pixel.",
+      "dtypeStr":"f",
+      "name":"dispersion",
       "superNames":["section_source1"],
       "units": "eV"
     },
     {
       "description":"",
       "dtypeStr":"f",
-      "name":"dispersion_in_eV/pixel",
-      "superNames":["section_source1"],
-      "units": "eV/pixel"
-    },
-    {
-      "description":"",
-      "dtypeStr":"f",
-      "name":"wavelength_in_pm",
+      "name":"wavelength",
       "superNames":["section_source1"],
       "units": "pm"
     },

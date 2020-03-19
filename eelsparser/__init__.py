@@ -24,8 +24,6 @@ import logging
 from nomadcore.simple_parser import SimpleMatcher
 from nomadcore.baseclasses import ParserInterface, AbstractBaseParser
 
-from nomad.parsing import LocalBackend
-
 from .hyper2json import transform as read_hyper
 
 
@@ -108,7 +106,7 @@ class EelsParser(AbstractBaseParser):
         if temp is not None:
             split = temp.find(' ')
             temp1 = temp[:split]
-            backend.addValue('probe_size_in_nm^2', float(temp1))
+            backend.addValue('probe_size', float(temp1))
         #test = data.get('source_purity')
         #print(type(test))
         backend.addValue('source_purity', data.get('source_purity'))
@@ -122,18 +120,18 @@ class EelsParser(AbstractBaseParser):
         if temp is not None:
             split = temp.find(' ')
             temp1 = temp[:split]
-            backend.addValue('convergence_semi-angle_in_mrad', float(temp1))
+            backend.addValue('convergence_semi_angle', float(temp1))
         temp = data.get('collection')
         if temp is not None:
             split = temp.find(' ')
             temp1 = temp[:split]
-            backend.addValue('collection_semi-angle_in_mrad', float(temp1))
+            backend.addValue('collection_semi_angle', float(temp1))
         backend.addValue('detector', data.get('detector'))
         temp = data.get('integratetime')
         if temp is not None:
             split = temp.find(' ')
             temp1 = temp[:split]
-            backend.addValue('integration_time_in_sec', float(temp1))
+            backend.addValue('integration_time', float(temp1))
         temp = data.get('readouts')
         if temp is not None:
             backend.addValue('readouts', int(temp))
@@ -153,24 +151,24 @@ class EelsParser(AbstractBaseParser):
         if temp is not None:
             split = temp.find(' ')
             temp1 = temp[:split]
-            backend.addValue('relative_thickness_in_t/lambda', float(temp1))
+            backend.addValue('relative_thickness', float(temp1))
 
         ae_gid = backend.openSection('section_source1')
         temp = data.get('beamenergy')
         if temp is not None:
             split = temp.find(' ')
             temp1 = temp[:split]
-            backend.addValue('incident_energy_in_kV', float(temp1))
+            backend.addValue('incident_energy', float(temp1))
         temp = data.get('resolution')
         if temp is not None:
             split = temp.find(' ')
             temp1 = temp[:split]
-            backend.addValue('resolution_in_eV', float(temp1))
+            backend.addValue('resolution', float(temp1))
         temp = data.get('stepSize')
         if temp is not None:
             split = temp.find(' ')
             temp1 = temp[:split]
-            backend.addValue('dispersion_in_eV/pixel', float(temp1))
+            backend.addValue('dispersion', float(temp1))
         temp = data.get('monochromated')
         temp1 = False
         if temp is not None:
