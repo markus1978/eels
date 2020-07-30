@@ -12,20 +12,12 @@
 #   limitations under the License.
 
 import sys
+import json
 
-from nomad.parsing.legacy import Backend
-from eelsparser import EelsParserInterface
+from eelsparser import EelsParser
 
 if __name__ == "__main__":
-    # instantiate the parser via its interface with a LocalBackend
-    parser = EelsParserInterface(backend=Backend)
-    # call the actual parsing with the given mainfile
-
-    parser.parse(sys.argv[1])
-
-    # print the results stored in the LocalBackend
-    #parser.parser_context.super_backend.write_json(
-    #    sys.stdout, pretty=True, root_sections=['section_experiment'])
+    archive = EelsParser.main(sys.argv[1])
 
     with open("abc.txt", "w+") as f:
-        parser.parser_context.super_backend.write_json(f, pretty=True, root_sections=['section_experiment'])
+        json.dump(archive.m_to_dict(), f, indent=2)

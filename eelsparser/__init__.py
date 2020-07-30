@@ -22,12 +22,11 @@ import ast
 import logging
 
 from .metainfo import eels as meels
-from .metainfo import m_env
-from nomad.datamodel.metainfo.general_experimental import section_experiment as msection_experiment
-from nomad.datamodel.metainfo.general_experimental import section_data as msection_data
-from nomad.datamodel.metainfo.general_experimental_method import section_method as msection_method
-from nomad.datamodel.metainfo.general_experimental_sample import section_sample as msection_sample
-from nomad.parsing.parser import MatchingParser
+from nomad.datamodel.metainfo.general_experimental import section_experiment as SectionExperiment
+from nomad.datamodel.metainfo.general_experimental import section_data as SectionData
+from nomad.datamodel.metainfo.general_experimental_method import section_method as SectionMethod
+from nomad.datamodel.metainfo.general_experimental_sample import section_sample as SectionSample
+from nomad.parsing.parser import FairdiParser
 
 from .hyper2json import transform as read_hyper
 
@@ -35,7 +34,7 @@ from .hyper2json import transform as read_hyper
 logger = logging.getLogger(__name__)
 
 
-class EelsParser(MatchingParser):
+class EelsParser(FairdiParser):
     def __init__(self):
         super().__init__(
             name='parsers/eels', code_name='eels', code_homepage='https://eelsdb.eu/',
@@ -43,16 +42,14 @@ class EelsParser(MatchingParser):
             mainfile_contents_re=(r'api_permalink = https://api\.eelsdb\.eu')
         )
 
-    def run(self, filepath, logger=logger):
-        self._metainfo_env = m_env
-
+    def parse(self, filepath, archive, logger=logger):
         try:
             data = read_hyper(filepath)
         except Exception as e:
             logger.error('could not read mainfile', exc_info=e)
             raise e
 
-        section_experiment = msection_experiment()
+        section_experiment = archive.m_create(SectionExperiment)
         section_experiment.experiment_summary = 'EELS-Spectra'
         section_experiment.experiment_location = 'Earth'
 
@@ -77,11 +74,11 @@ class EelsParser(MatchingParser):
         section_user.profile_api_url = data.get('author').get('profile_api_url')
         section_user.profile_url = data.get('author').get('profile_url')
 
-        section_method = section_experiment.m_create(msection_method)
+        section_method = section_experiment.m_create(SectionMethod)
         section_method.experiment_method_name = 'Electron Energy Loss Spectroscopy'
         section_method.probing_method = 'electrons'
 
-        section_sample = section_experiment.m_create(msection_sample)
+        section_sample = section_experiment.m_create(SectionSample)
         section_sample.sample_atom_labels = np.asarray(ast.literal_eval(data.get('elements')))
         section_sample.sample_chemical_formula = data.get('formula')
         temp = data.get('probesize')
@@ -156,7 +153,7 @@ class EelsParser(MatchingParser):
                 temp1 = True
         section_source1.monochromated = temp1
 
-        section_data = section_experiment.m_create(msection_data)
+        section_data = section_experiment.m_create(SectionData)
         section_data.id = int(data.get('id'))
         section_data.edges = data.get('edges')
         temp = data.get('min_energy')
@@ -211,5 +208,3 @@ class EelsParser(MatchingParser):
                 if temp is not None:
                     temp1 = temp1 + ', ' + temp
             section_reference.freetext = temp1
-
-        return section_experiment
